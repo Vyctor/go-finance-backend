@@ -3,9 +3,14 @@ package utils
 import (
 	"math/rand"
 	"strings"
+	"time"
 )
 
 const alphabet = "abcdefghijklmnopqrstuvwxyz"
+
+func init() {
+	rand.Seed(time.Now().UnixNano())
+}
 
 func RandomString(length int) string {
 	var sb strings.Builder
